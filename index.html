@@ -4,17 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script defer src="src/comment.js"></script>
     <script defer src="src/comment_service.js"></script>
     <script defer src="src/villian.js"></script>
     <script defer src="src/villian_service.js"></script>
     <script defer src="index.js"></script>
+    
     <title>BurnBookMarvel</title>
 </head>
 <body>
-<div id="comment-form"></div>
+
+    <h2>Create Comment: </h2>
+    <form id="comment-form">
+        <label for="comment-title">Title:</label>
+        <input type="text" name="title" id="comment-title"/> <br/>
+        <label for="comment-description">Description:</label>
+        <input type="text" name="description" id="comment-description"/><br/>
+        <!-- <input type="text" name="villian" id="villian-name">
+        <input type="text" name="villian" id="villian-name">
+        <input type="text" name="villian" id="villian-name"> -->
+        <select name="villian_id" id="villian-dropdown">
+
+        </select></br>
+        <input type="submit" value="Create Comment" />
+    </form>
+</div>
 <div id="villians"></div>
-<div id="comments"></div>
+<div id="comments-cont"></div>
  
 </body>
 </html>
