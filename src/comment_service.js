@@ -42,5 +42,38 @@ class CommentService {
         })
     }
 
+    updateComment(comment){
+        const {title, description, id} = comment
+        const commentInfo = {
+            title, 
+            description
+        }
+
+        const configObject = {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(commentInfo)
+        }
+        // debugger
+        fetch(`${this.port}/comments/${id}`, configObject)
+        .then( comment.render() )
+        // .then(data => {
+        //     // const c = new Comment(data)
+        //     comment.render()
+        // })
+    }
+
+    deleteComment(e){
+        // debugger
+        const id = e.target.dataset.id
+        e.target.parentElement.remove()
+        fetch(`${this.port}/comments/${id}`, {method: 'DELETE'})
+        .then(response => response.json())
+        .then(json => alert(json.message))
+    }
+
 
 }
